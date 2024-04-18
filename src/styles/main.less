@@ -1,0 +1,99 @@
+@import "reset.less";
+@import "mapas.less";
+
+@breakPointMobile: ~"(max-width: 767px)";
+@breakPointTablet: ~"(max-width: 1023px)";
+
+body
+{
+    background-color: #colors[backgroundcolor];
+    color: #colors[corDosTextos];
+}
+
+li {
+    list-style: none;
+    
+}
+
+.container
+{
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    
+
+    @media @breakPointTablet {
+        max-width: 80%;
+    }
+    @media @breakPointMobile {
+        max-width: 70%;
+    }
+}
+
+header 
+{
+    background-color: #colors[corPrincipal];
+    .container
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .menu
+        {
+            display: flex;
+            a {
+                margin: 5px;
+                color: #colors[corDosTextos];
+                text-decoration: none;
+            }
+        }
+    }
+
+    .branding
+    {
+        img
+        {
+            padding: 10px;
+        }
+    }
+}
+
+section
+{
+    .container
+    {
+        
+        h2
+        {
+            margin: 24px 0;
+            border-bottom: 2px solid #colors[detalhes];
+        }
+        .products
+        {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr 1fr 1fr 1fr);
+            gap: 8.3%;
+            text-align: center;
+        }
+
+        .product-item
+        {
+            a
+            {
+                text-decoration: none;
+                padding: 16px;
+                background-color: #colors[buttonColor];
+                color: #colors[corDosTextos];
+                font-weight: bold;
+                &:hover
+                {
+                    background-color: darken(#0097e6, 10%);
+                }
+            }
+            p
+            {
+                margin-bottom: 28px;
+            }
+        }
+    }
+}
